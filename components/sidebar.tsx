@@ -56,8 +56,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
       <Card className="p-4">
         <div className="flex items-center space-x-4">
           <Avatar className="h-12 w-12">
-            <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60" />
-            <AvatarFallback>JD</AvatarFallback>
+            <AvatarImage src="https://i.pinimg.com/736x/0b/9f/b1/0b9fb14a69f26ab63719f21803425875.jpg" />
           </Avatar>
           <div>
             <h3 className="font-semibold">Srimadhavan G</h3>
