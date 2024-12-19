@@ -24,7 +24,6 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement newsletter subscription
     console.log('Subscribe:', email);
   };
 
@@ -34,7 +33,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
   };
 
   return (
-    <aside className="w-full lg:w-80 space-y-6">
+    <div className="grid gap-6">
       {/* Search */}
       <div className="space-y-4">
         <div className="relative">
@@ -47,7 +46,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
           />
         </div>
         {isSearching && (
-          <Card className="p-4">
+          <Card className="p-4 absolute left-4 right-4 lg:relative lg:left-0 lg:right-0 z-50">
             <SearchResults results={results} query={query} />
           </Card>
         )}
@@ -57,7 +56,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
       <Card className="p-4">
         <div className="flex items-center space-x-4">
           <Avatar className="h-12 w-12">
-            <AvatarImage src="https://i.pinimg.com/736x/0b/9f/b1/0b9fb14a69f26ab63719f21803425875.jpg" />
+            <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60" />
             <AvatarFallback>JD</AvatarFallback>
           </Avatar>
           <div>
@@ -66,17 +65,17 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
           </div>
         </div>
         <p className="mt-4 text-sm text-muted-foreground">
-          Passionate about development, Sharing knowleddge through writing! 
-        </p>
+          Learning and Sharing knowledge through writing! 
+           </p>
       </Card>
 
       {/* Categories */}
       <Card className="p-4">
         <h3 className="font-semibold mb-4">Categories</h3>
-        <div className="space-y-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-2">
           {categories.map((category) => (
             <Link key={category} href={`/categories/${category.toLowerCase()}`}>
-              <Button variant="ghost" className="w-full justify-start">
+              <Button variant="ghost" className="w-full justify-start text-sm">
                 {category}
               </Button>
             </Link>
@@ -90,7 +89,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
         <div className="space-y-2">
           {recentPosts.map((post) => (
             <Link key={post.slug} href={`/posts/${post.slug}`}>
-              <Button variant="link" className="w-full justify-start p-0 h-auto">
+              <Button variant="link" className="w-full justify-start p-0 h-auto text-sm">
                 {post.title}
               </Button>
             </Link>
@@ -101,10 +100,10 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
       {/* Archives */}
       <Card className="p-4">
         <h3 className="font-semibold mb-4">Archives</h3>
-        <div className="space-y-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-2">
           {archives.map(({ month, count }) => (
             <Link key={month} href={getArchiveLink(month)}>
-              <Button variant="ghost" className="w-full justify-start">
+              <Button variant="ghost" className="w-full justify-start text-sm">
                 {month} ({count})
               </Button>
             </Link>
@@ -129,6 +128,6 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
           <Button type="submit" className="w-full">Subscribe</Button>
         </form>
       </Card>
-    </aside>
+    </div>
   );
 }

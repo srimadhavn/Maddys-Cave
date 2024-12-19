@@ -14,17 +14,19 @@ export function PageLayout({ children }: PageLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="flex-1">
+      <main className="container mx-auto px-4 py-4 md:py-8">
+        <div className="flex flex-col-reverse lg:flex-row gap-6 lg:gap-8">
+          <div className="flex-1 w-full">
             {children}
           </div>
-          <Sidebar
-            categories={categories}
-            recentPosts={posts.slice(0, 3)}
-            archives={archives}
-            allPosts={posts}
-          />
+          <div className="w-full lg:w-80 flex-none">
+            <Sidebar
+              categories={categories}
+              recentPosts={posts.slice(0, 3)}
+              archives={archives}
+              allPosts={posts}
+            />
+          </div>
         </div>
       </main>
     </div>
