@@ -19,6 +19,12 @@ export function generateStaticParams() {
 
 export default function ArchivePage({ params }: { params: { month: string } }) {
   const [year, month] = params.month.split('-').map(Number);
+  
+  // Validate year and month
+  if (!year || !month || month < 1 || month > 12) {
+    notFound();
+  }
+
   const posts = getAllPosts().filter((post) => {
     const postDate = new Date(post.date);
     return (

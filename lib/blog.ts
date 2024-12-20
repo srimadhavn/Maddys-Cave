@@ -107,3 +107,11 @@ export function getArchives(): { month: string; count: number }[] {
     .map(([month, count]) => ({ month, count }))
     .sort((a, b) => new Date(b.month).getTime() - new Date(a.month).getTime());
 }
+
+export function formatArchiveDate(date: string): string {
+  const d = new Date(date);
+  if (isNaN(d.getTime())) {
+    throw new Error('Invalid date');
+  }
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+}

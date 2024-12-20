@@ -62,7 +62,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
       <Card className="p-4">
         <div className="flex items-center space-x-4">
           <Avatar className="h-12 w-12">
-            <AvatarImage src="https://i.pinimg.com/736x/0b/9f/b1/0b9fb14a69f26ab63719f21803425875.jpg11" />
+            <AvatarImage src="https://i.pinimg.com/736x/97/69/ce/9769ce409fd65654447355a0a8c8c34b.jpg" />
             <AvatarFallback>SG</AvatarFallback>
           </Avatar>
           <div>
