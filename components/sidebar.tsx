@@ -63,6 +63,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
         <div className="flex items-center space-x-4">
           <Avatar className="h-12 w-12">
             <AvatarImage src="https://i.pinimg.com/736x/0b/9f/b1/0b9fb14a69f26ab63719f21803425875.jpg11" />
+            <AvatarFallback>SG</AvatarFallback>
           </Avatar>
           <div>
             <h3 className="font-semibold">Srimadhavan G</h3>
