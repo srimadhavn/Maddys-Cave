@@ -2,6 +2,8 @@ import { getAllPosts } from '@/lib/blog';
 import { PostPreview } from '@/components/post-preview';
 import { PageLayout } from '@/components/layout/page-layout';
 import { notFound } from 'next/navigation';
+import { ChevronLeft } from 'lucide-react';
+import Link from 'next/link';
 
 export function generateStaticParams() {
   const posts = getAllPosts();
@@ -37,10 +39,21 @@ export default function ArchivePage({ params }: { params: { month: string } }) {
   return (
     <PageLayout>
       <div className="space-y-8">
-        <h2 className="text-3xl font-bold mb-8">Archive: {monthName}</h2>
-        {posts.map((post) => (
-          <PostPreview key={post.slug} post={post} />
-        ))}
+        <div className="flex items-center gap-4 mb-8">
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors md:hidden"
+          >
+            <ChevronLeft className="h-4 w-4 mr-1" />
+            Back
+          </Link>
+          <h2 className="text-2xl md:text-3xl font-bold">Archive: {monthName}</h2>
+        </div>
+        <div className="grid gap-6">
+          {posts.map((post) => (
+            <PostPreview key={post.slug} post={post} />
+          ))}
+        </div>
       </div>
     </PageLayout>
   );
