@@ -12,7 +12,7 @@ excerpt: Learn everything about Data Structures and Algorithms
 - Efficient memory management
 
 Types of Data Structures
- - Arrays
+ - [[#Arrays]]
  - Linked Lists
  - Stacks
  - Queues
@@ -57,3 +57,18 @@ for (int i = 0; i < n; i++){
 		
 ```
 
+##### Finding maximum element in an array
+- To find a maximum element in array
+	- Check if the array is sorted, if not sort it for better result
+	- If the array is sorted, then check whether the next element in an array is greater than the previous element
+
+```
+vector <int> arr = {1,2,3,4}
+int n = arr.size();
+int max = arr[0];
+
+for(int i=1; i<n; i++){
+	if(arr[i] > max) max = arr[i];
+}
+return max;
+```
