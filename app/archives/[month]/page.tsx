@@ -20,7 +20,6 @@ export function generateStaticParams() {
 export default function ArchivePage({ params }: { params: { month: string } }) {
   const [year, month] = params.month.split('-').map(Number);
   
-  // Validate year and month
   if (!year || !month || month < 1 || month > 12) {
     notFound();
   }
@@ -46,13 +45,6 @@ export default function ArchivePage({ params }: { params: { month: string } }) {
     <PageLayout>
       <div className="space-y-8">
         <div className="flex items-center gap-4 mb-8">
-          <Link 
-            href="/" 
-            className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors md:hidden"
-          >
-            <ChevronLeft className="h-4 w-4 mr-1" />
-            Back
-          </Link>
           <h2 className="text-2xl md:text-3xl font-bold">Archive: {monthName}</h2>
         </div>
         <div className="grid gap-6">

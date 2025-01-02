@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Search } from "lucide-react";
 import { type Post } from "@/lib/blog";
-import { useSearch } from "@/hooks/use-search";
+import { useSearch } from "@/lib/hooks/use-search";
 import { SearchResults } from "@/components/search/search-results";
 import { formatArchiveDate } from "@/lib/date-utils";
 
@@ -49,6 +49,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
             className="pl-8"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            autoFocus={false}
           />
         </div>
         {isSearching && (

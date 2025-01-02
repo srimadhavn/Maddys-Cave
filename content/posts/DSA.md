@@ -12,7 +12,7 @@ excerpt: Learn everything about Data Structures and Algorithms
 - Efficient memory management
 
 Types of Data Structures
- - [[#Arrays]]
+ - Arrays
  - Linked Lists
  - Stacks
  - Queues

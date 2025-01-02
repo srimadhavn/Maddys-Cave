@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d78ac86572278fff",
+        "id": "d97298b1da1c93cb",
         "type": "tabs",
         "children": [
           {
-            "id": "02e8ce2d16f500a2",
+            "id": "3fa0419b2c59da68",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -162,10 +162,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "02e8ce2d16f500a2",
+  "active": "3fa0419b2c59da68",
   "lastOpenFiles": [
-    "418e25872315e458d730aff174647b2d.jpg",
+    "Arrays.md",
     "DSA.md",
+    "Linked Lists.md",
+    "418e25872315e458d730aff174647b2d.jpg",
     "lu26214dbve7.tmp",
     "Untitled.md",
     "Pasted image 20241221005208.png",

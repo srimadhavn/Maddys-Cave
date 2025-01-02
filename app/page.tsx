@@ -5,7 +5,7 @@ import { FeaturedPost } from '@/components/featured-post';
 
 export default function Home() {
   const posts = getAllPosts();
-  const featuredPost = posts[0]; // Most recent post as featured
+  const featuredPost = posts[0]; 
   const regularPosts = posts.slice(1);
 
   return (
