@@ -67,8 +67,7 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
           {[
             { icon: Github, href: "https://github.com/Srimadhavn", label: "GitHub" },
             { icon: Linkedin, href: "https://www.linkedin.com/in/srimadhavn/", label: "LinkedIn" },
-            { icon: Mail, href: "mailto:contact@example.com", label: "Email" },
-            { icon: Rss, href: "/feed.xml", label: "RSS" }
+            { icon: Mail, href: "mailto:srimadhavan93@gmail.com", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
             <Button
               key={label}
