@@ -2,8 +2,6 @@ import { getAllPosts } from '@/lib/blog';
 import { PostPreview } from '@/components/post-preview';
 import { PageLayout } from '@/components/layout/page-layout';
 import { notFound } from 'next/navigation';
-import { ChevronLeft } from 'lucide-react';
-import Link from 'next/link';
 
 export function generateStaticParams() {
   const posts = getAllPosts();
