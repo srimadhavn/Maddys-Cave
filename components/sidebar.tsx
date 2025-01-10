@@ -56,14 +56,12 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
             <AvatarFallback>SN</AvatarFallback>
           </Avatar>
           <div>
-            <h2 className="text-lg font-semibold">Srimadha N</h2>
+            <h2 className="text-lg font-semibold">Srimadhavan G</h2>
             <p className="text-sm text-muted-foreground">Full Stack Developer</p>
           </div>
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed mb-4">
           I'm a Full Stack Developer passionate about cloud technologies and building scalable applications. 
-          With expertise in modern web development and cloud architecture, I love creating efficient solutions 
-          that make a difference.
         </p>
         <div className="flex gap-2">
           {[
