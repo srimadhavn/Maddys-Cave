@@ -57,10 +57,10 @@ for (int i = 0; i < n; i++){
 		
 ```
 
-##### Finding maximum element in an array
-- To find a maximum element in array
-	- Check if the array is sorted, if not sort it for better result
-	- If the array is sorted, then check whether the next element in an array is greater than the previous element
+ **Finding maximum element in an array**
+
+- Check if the array is sorted, if not sort it for better result
+- If the array is sorted, then check whether the next element in an array is greater than the previous element
 
 ```
 vector <int> arr = {1,2,3,4}

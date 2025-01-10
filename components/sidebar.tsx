@@ -6,11 +6,11 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Search } from "lucide-react";
 import { type Post } from "@/lib/blog";
 import { useSearch } from "@/lib/hooks/use-search";
 import { SearchResults } from "@/components/search/search-results";
 import { formatArchiveDate } from "@/lib/date-utils";
+import { Search, Github, Linkedin } from "lucide-react";
 
 
 interface SidebarProps {
@@ -40,41 +40,50 @@ export function Sidebar({ categories, recentPosts, archives, allPosts }: Sidebar
 
   return (
     <div className="grid gap-6">
-      {/* Search */}
-      <div className="space-y-4">
-        <div className="relative">
-          <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-          <Input 
-            placeholder="Search posts..." 
-            className="pl-8"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            autoFocus={false}
-          />
-        </div>
-        {isSearching && (
-          <Card className="p-4 absolute left-4 right-4 lg:relative lg:left-0 lg:right-0 z-50">
-            <SearchResults results={results} query={query} />
-          </Card>
-        )}
-      </div>
-
-      {/* About Me */}
-      <Card className="p-4">
-        <div className="flex items-center space-x-4">
-          <Avatar className="h-12 w-12">
-            <AvatarImage src="https://i.pinimg.com/736x/97/69/ce/9769ce409fd65654447355a0a8c8c34b.jpg" />
-            <AvatarFallback>SG</AvatarFallback>
-          </Avatar>
-          <div>
-            <h3 className="font-semibold">Srimadhavan G</h3>
-            <p className="text-sm text-muted-foreground">Tech Enthusiast</p>
+         {/* Search */}
+         <Card className="p-4">
+          <div className="relative">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search posts..."
+              className="pl-8 text-sm"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
           </div>
-        </div>
-        <p className="mt-4 text-sm text-muted-foreground">
-          Learning and Sharing knowledge through writing! 
-           </p>
-      </Card>
+          {isSearching && (
+            <div className="mt-4">
+              <SearchResults results={results} query={query} />
+            </div>
+          )}
+        </Card>
+
+           {/* About Me */}
+        <Card className="p-4">
+          <h2 className="text-lg font-semibold mb-3">About Me</h2>
+          <div className="prose prose-sm dark:prose-invert">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              I'm a Full Stack Developer passionate about cloud technologies and building scalable applications. 
+              With expertise in modern web development and cloud architecture, I love creating efficient solutions 
+              that make a difference.
+            </p>
+            <div className="flex gap-2 mt-4">
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://github.com/Srimadhavn" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-4 w-4" />
+                  <span className="sr-only">GitHub</span>
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://www.linkedin.com/in/srimadhavn/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4" />
+                  <span className="sr-only">LinkedIn</span>
+                </a>
+              </Button>
+            </div>
+          </div>
+        </Card>
 
       {/* Categories */}
       <Card className="p-4">

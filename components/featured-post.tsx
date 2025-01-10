@@ -6,6 +6,12 @@ import { Card } from '@/components/ui/card';
 import { Calendar, Clock, Tag } from 'lucide-react';
 
 export function FeaturedPost({ post }: { post: Post }) {
+  if (!post) return null;
+
+  const categoryUrl = post.category 
+    ? encodeURIComponent(post.category.toLowerCase())
+    : '';
+
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <div className="p-6 space-y-4">
@@ -28,15 +34,17 @@ export function FeaturedPost({ post }: { post: Post }) {
               <Clock className="h-4 w-4" />
               <span>{post.readingTime}</span>
             </div>
-            <div className="flex items-center gap-1">
-              <Tag className="h-4 w-4" />
-              <Link 
-                href={`/categories/${post.category.toLowerCase()}`}
-                className="hover:text-primary transition-colors"
-              >
-                {post.category}
-              </Link>
-            </div>
+            {post.category && (
+              <div className="flex items-center gap-1">
+                <Tag className="h-4 w-4" />
+                <Link 
+                  href={`/categories/${categoryUrl}`}
+                  className="hover:text-primary transition-colors"
+                >
+                  {post.category}
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 
