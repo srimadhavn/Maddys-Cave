@@ -9,11 +9,11 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Modern Blog',
-  description: 'A modern blog built with Next.js and Tailwind CSS',
+  title: "Maddy's Cave",
+  description: 'A blog built with Next.js and Tailwind CSS',
   openGraph: {
-    title: 'Modern Blog',
-    description: 'A modern blog built with Next.js and Tailwind CSS',
+    title: 'Maddys Cave',
+    description: 'A blog built with Next.js and Tailwind CSS',
     type: 'website',
     url: 'https://your-domain.com',
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643',
         width: 1200,
         height: 630,
-        alt: 'Modern Blog'
+        alt: 'Maddys Cave'
       }
     ]
   }
