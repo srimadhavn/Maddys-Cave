@@ -8,6 +8,8 @@ export default function BlogIndex() {
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-8">
       <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Blog Posts</h1>
+      <p className='text-l text-muted-foreground text-center mb-9'>Contents of the blog are updated in Data structures and node.js</p>
+
       <div className="grid gap-4 sm:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-lg sm:max-w-none">
         {posts.map((post) => (
           <Link

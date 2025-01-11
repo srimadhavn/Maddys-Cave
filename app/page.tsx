@@ -18,6 +18,10 @@ export default async function Home() {
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           I love sharing what I learn by writing! 
         </p>
+        <p className="text-l text-muted-foreground mx-auto">
+          The datas of blog posts are yet to uploaded..
+            Do checkout on Data structures and node.js
+        </p>
         <div className="flex justify-center gap-4">
           <Button asChild size="lg">
             <Link href="/blog">
