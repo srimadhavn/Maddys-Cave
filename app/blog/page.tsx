@@ -6,9 +6,9 @@ export default function BlogIndex() {
   const posts = getSortedPostsData()
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-8">
       <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Blog Posts</h1>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-md sm:max-w-none">
+      <div className="grid gap-4 sm:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-lg sm:max-w-none">
         {posts.map((post) => (
           <Link
             key={post.id}
@@ -27,7 +27,7 @@ export default function BlogIndex() {
                   />
                 </div>
               )}
-              <div className="p-4 sm:p-6">
+              <div className="p-3 sm:p-4">
                 <h2 className="text-xl sm:text-2xl font-bold mb-2 group-hover:text-primary line-clamp-2">
                   {post.title}
                 </h2>
