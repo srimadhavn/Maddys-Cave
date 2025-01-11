@@ -1,4 +1,4 @@
-﻿---
+---
 title: Data Structures and Algorithms
 date: "2024-12-18"
 category: Technology
@@ -40,7 +40,7 @@ arr.push_back(11);
 #####  **Deletion**:
 - To delete the last element in an dynamic array,
 
-```
+```c++
 vector <int> arr = {1,2,3,4,5};
 arr.pop_back();
 // this will pop the last element out and only remaining elements exists in the array
