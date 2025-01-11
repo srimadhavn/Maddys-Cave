@@ -6,9 +6,9 @@ export default function BlogIndex() {
   const posts = getSortedPostsData()
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Blog Posts</h1>
-      <div className="grid gap-8">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {posts.map((post) => (
           <Link
             key={post.id}
@@ -17,12 +17,13 @@ export default function BlogIndex() {
           >
             <article className="border rounded-lg overflow-hidden transition-shadow hover:shadow-lg">
               {post.coverImage && (
-                <div className="relative w-full h-[200px]">
+                <div className="relative w-full h-[200px] sm:h-[250px] lg:h-[300px]">
                   <Image
                     src={post.coverImage}
                     alt={post.title}
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
               )}
