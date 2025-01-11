@@ -1,6 +1,6 @@
 ---
 title: Node.js
-date: 2025-01-11
+date: 2025-01-10
 category: Technology
 excerpt: Node.js and its backend capabilites!
 coverImage: https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg

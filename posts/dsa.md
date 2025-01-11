@@ -1,6 +1,6 @@
 ---
 title: Data Structures and Algorithms
-date: "2024-12-18"
+date: 2024-12-18
 category: Technology
 excerpt: Learn everything about Data Structures and Algorithms
 coverImage: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"

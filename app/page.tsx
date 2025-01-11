@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 export default async function Home() {
   const posts = await getSortedPostsData()
   const featuredPosts = posts.slice(0, 3)
-  
+
   return (
     <div className="space-y-16">
       <section className="text-center space-y-6">
@@ -41,39 +41,46 @@ export default async function Home() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredPosts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.id}`}>
-              <Card className="h-full hover:shadow-lg transition-shadow group">
-                <CardHeader className="p-0">
-                  <div className="relative aspect-[16/9]">
-                    <Image
-                      src={post.coverImage}
-                      alt={post.title}
-                      fill
-                      className="object-cover rounded-t-lg transform group-hover:scale-105 transition-transform duration-200"
-                    />
-                  </div>
-                </CardHeader>
-                <CardContent className="p-4 space-y-2">
-                  <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                    {post.title}
-                  </CardTitle>
-                  <p className="text-sm text-muted-foreground line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                </CardContent>
-                <CardFooter className="p-4 pt-0 flex justify-between text-sm text-muted-foreground">
-                  <span>{post.category}</span>
-                  <time>
-                    {formatDistance(new Date(post.date), new Date(), { addSuffix: true })}
-                  </time>
-                </CardFooter>
-              </Card>
-            </Link>
-          ))}
+          {featuredPosts.map((post) => {
+
+            const postDate = new Date(post.date)
+            const isValidDate = !isNaN(postDate.getTime())  
+
+            return (
+              <Link key={post.id} href={`/blog/${post.id}`}>
+                <Card className="h-full hover:shadow-lg transition-shadow group">
+                  <CardHeader className="p-0">
+                    <div className="relative aspect-[16/9]">
+                      <Image
+                        src={post.coverImage}
+                        alt={post.title}
+                        fill
+                        className="object-cover rounded-t-lg transform group-hover:scale-105 transition-transform duration-200"
+                      />
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-4 space-y-2">
+                    <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+                      {post.title}
+                    </CardTitle>
+                    <p className="text-sm text-muted-foreground line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                  </CardContent>
+                  <CardFooter className="p-4 pt-0 flex justify-between text-sm text-muted-foreground">
+                    <span>{post.category}</span>
+                    <time>
+                      {isValidDate
+                        ? formatDistance(postDate, new Date(), { addSuffix: true })
+                        : 'Invalid date'}
+                    </time>
+                  </CardFooter>
+                </Card>
+              </Link>
+            )
+          })}
         </div>
       </section>
-
     </div>
   )
 }

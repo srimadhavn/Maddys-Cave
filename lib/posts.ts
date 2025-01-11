@@ -3,7 +3,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
-import prism from 'remark-prism'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
@@ -34,9 +33,9 @@ export async function getPostData(id: string): Promise<Post> {
   const { data, content } = matter(fileContents)
   
   const processedContent = await remark()
-.use(html)
-.process(content)
-const contentHtml = processedContent.toString()
+  .use(html)
+  .process(content)
+  const contentHtml = processedContent.toString()
 
   if (!data.title || !data.date || !data.category) {
     throw new Error(`Invalid post metadata for ${id}`)
@@ -88,11 +87,14 @@ export function getSortedPostsData(): Omit<Post, 'content'>[] {
         console.warn(`Skipping invalid post: ${id}`)
         return null
       }
-
+      let date = data.date
+      if (date.length === 10) {  // If date is in "YYYY-MM-DD" format, append time
+        date += '00:00:00'
+      }
       return {
         id,
         title: data.title,
-        date: data.date,
+        date,
         excerpt: data.excerpt || '',
         category: data.category,
         coverImage: data.coverImage || '',
@@ -101,5 +103,5 @@ export function getSortedPostsData(): Omit<Post, 'content'>[] {
     })
     .filter((post): post is Omit<Post, 'content'> => post !== null)
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
-}
+    return allPostsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  }
