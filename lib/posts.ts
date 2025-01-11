@@ -19,22 +19,18 @@ export interface Post {
 }
 
 export async function getPostData(id: string): Promise<Post> {
-  // Ensure posts directory exists
   if (!fs.existsSync(postsDirectory)) {
     throw new Error('Posts directory does not exist')
   }
 
   const postFilePath = path.join(postsDirectory, `${id}.md`)
   
-  // Check if file exists
   if (!fs.existsSync(postFilePath)) {
     throw new Error(`Post with id ${id} not found`)
   }
 
-  // Read the markdown file
   const fileContents = fs.readFileSync(postFilePath, 'utf8')
 
-  // Use gray-matter to parse the post metadata section
   const { data, content } = matter(fileContents)
   
   const processedContent = await remark()
@@ -42,7 +38,6 @@ export async function getPostData(id: string): Promise<Post> {
 .process(content)
 const contentHtml = processedContent.toString()
 
-  // Validate required fields
   if (!data.title || !data.date || !data.category) {
     throw new Error(`Invalid post metadata for ${id}`)
   }
@@ -60,7 +55,6 @@ const contentHtml = processedContent.toString()
 }
 
 export function getAllPostIds() {
-  // Ensure posts directory exists
   if (!fs.existsSync(postsDirectory)) {
     return []
   }
@@ -76,7 +70,6 @@ export function getAllPostIds() {
 }
 
 export function getSortedPostsData(): Omit<Post, 'content'>[] {
-  // Ensure posts directory exists
   if (!fs.existsSync(postsDirectory)) {
     return []
   }
@@ -91,7 +84,6 @@ export function getSortedPostsData(): Omit<Post, 'content'>[] {
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const { data } = matter(fileContents)
 
-      // Validate required fields
       if (!data.title || !data.date || !data.category) {
         console.warn(`Skipping invalid post: ${id}`)
         return null
@@ -109,6 +101,5 @@ export function getSortedPostsData(): Omit<Post, 'content'>[] {
     })
     .filter((post): post is Omit<Post, 'content'> => post !== null)
 
-  // Sort posts by date
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
