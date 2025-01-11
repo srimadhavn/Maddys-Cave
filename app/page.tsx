@@ -19,7 +19,7 @@ export default async function Home() {
           I love sharing what I learn by writing! 
         </p>
         <p className="text-l text-muted-foreground mx-auto">
-          The datas of blog posts are yet to uploaded..
+        ⚠️ The datas of blog posts are yet to uploaded..
             Do checkout on Data structures and node.js
         </p>
         <div className="flex justify-center gap-4">
