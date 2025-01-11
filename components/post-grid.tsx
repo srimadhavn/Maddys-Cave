@@ -22,7 +22,21 @@ const item = {
   show: { opacity: 1, y: 0 }
 }
 
-export default function PostGrid({ posts }) {
+interface Post {
+  id: string;
+  coverImage: string;
+  title: string;
+  tags: string[];
+  excerpt: string;
+  author: string;
+  date: string;
+}
+
+interface PostGridProps {
+  posts: Post[];
+}
+
+export default function PostGrid({ posts }: PostGridProps) {
   return (
     <motion.div 
       className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
