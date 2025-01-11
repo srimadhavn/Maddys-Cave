@@ -8,7 +8,7 @@ export default function BlogIndex() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Blog Posts</h1>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-4">
         {posts.map((post) => (
           <Link
             key={post.id}
