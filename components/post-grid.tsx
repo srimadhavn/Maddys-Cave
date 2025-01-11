@@ -49,7 +49,7 @@ export default function PostGrid({ posts }: PostGridProps) {
           <Link href={`/blog/${post.id}`}>
             <Card className="h-full hover:shadow-lg transition-all duration-300 group">
               <CardHeader className="p-0">
-                <div className="relative aspect-[16/9] overflow-hidden rounded-t-lg">
+                <div className="relative aspect-[16/9] overflow-hidden rounded-t-lg w-full">
                   <Image
                     src={post.coverImage}
                     alt={post.title}
