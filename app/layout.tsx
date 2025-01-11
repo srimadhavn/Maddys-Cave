@@ -6,6 +6,7 @@ import Header from '@/components/header'
 import { Toaster } from '@/components/ui/toaster'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
