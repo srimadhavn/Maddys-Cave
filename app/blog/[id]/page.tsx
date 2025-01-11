@@ -1,7 +1,6 @@
 import { getPostData, getAllPostIds } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
-import CodeBlock from '@/components/CodeBlock';
 
 export async function generateStaticParams() {
   const paths = getAllPostIds()
