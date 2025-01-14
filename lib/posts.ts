@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import remarkUnwrapImages from 'remark-unwrap-images'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
@@ -33,8 +34,10 @@ export async function getPostData(id: string): Promise<Post> {
   const { data, content } = matter(fileContents)
   
   const processedContent = await remark()
-  .use(html)
-  .process(content)
+    .use(html)
+    .use(remarkUnwrapImages) // Add the unwrap images plugin
+    .process(content)
+  
   const contentHtml = processedContent.toString()
 
   if (!data.title || !data.date || !data.category) {
