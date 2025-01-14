@@ -1,6 +1,6 @@
 ---
 title: Backend
-date: 2025-01-10
+date: 2025-01-14
 category: Technology
 excerpt: Backend of web development
 coverImage: https://www.appsyoda.com/blogimages/expressjs-nodejs.png
