@@ -7,7 +7,7 @@ coverImage: https://www.appsyoda.com/blogimages/expressjs-nodejs.png
 tags:
   - node
   - express
-  - mongooDB
+  - framework
 ---
 **Asynchronous JavaScript**
 - In general, Synchronous JavaScript reads line by line and executes the function. 
