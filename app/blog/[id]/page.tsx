@@ -34,6 +34,10 @@ export default async function Post({ params }: { params: { id: string } }) {
   try {
     const post = await getPostData(params.id)
     const postUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${params.id}`
+    const formattedDate = new Date(post.date).toLocaleDateString('en-IN', {
+      day: 'numeric',
+      month: 'short',
+    })
 
     return (
       <article className="max-w-4xl mx-auto px-4 py-8">
@@ -55,7 +59,7 @@ export default async function Post({ params }: { params: { id: string } }) {
             <div className="flex items-center gap-4 text-muted-foreground">
               <span>{post.category}</span>
               <span>•</span>
-              <time>{new Date(post.date).toLocaleDateString()}</time>
+              <time>{formattedDate}</time>
             </div>
             <ShareButton url={postUrl} title={post.title} />
           </div>
