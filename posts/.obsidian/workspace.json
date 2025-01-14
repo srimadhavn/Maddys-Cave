@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend.md",
+                "file": "isperiodsoverrated.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "backend"
+              "title": "isperiodsoverrated"
             }
           }
         ],
@@ -179,9 +179,12 @@
   },
   "active": "337e80c37ae0ec6c",
   "lastOpenFiles": [
+    "image.png",
+    "backend.md",
+    "isperiodsoverrated.md",
+    "isperiodsoverrated",
     "nodejs.md",
     "().md",
-    "backend.md",
     "react.md",
     "test.md",
     "python.md",
