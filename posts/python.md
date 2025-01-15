@@ -3,7 +3,7 @@ title: Python
 date: 2025-01-03
 category: Technology
 excerpt: Learn more about python libraries
-coverImage: https://ciracollege.com/wp-content/uploads/2020/11/How-to-Learn-Python.jpg
+coverImage: https://miro.medium.com/v2/resize:fit:1024/1*CvcM2chQox1VGJnWQO3acg.png
 tags:
   - Python
   - numpy

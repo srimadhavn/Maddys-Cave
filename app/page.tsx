@@ -40,10 +40,11 @@ export default async function Home() {
     {featuredPost && (
         <section className="space-y-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold">Featured Post</h2>
+            <h2 className="text-3xl font-bold mb-12">Featured Post</h2>
           </div>
+          <div className="mx-auto max-w-lg">
           <Link key={featuredPost.id} href={`/blog/${featuredPost.id}`}>
-            <Card className="h-full hover:shadow-lg transition-shadow group">
+            <Card className="h-full hover:shadow-lg overflow-hidden transition-shadow group">
               <CardHeader className="p-0">
                 <div className="relative aspect-[16/9]">
                   <Image
@@ -75,6 +76,7 @@ export default async function Home() {
               </CardFooter>
             </Card>
           </Link>
+          </div>
         </section>
       )}
       <section className="space-y-8">
@@ -88,7 +90,7 @@ export default async function Home() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {featuredPosts.map((post) => (
             <Link key={post.id} href={`/blog/${post.id}`}>
-              <Card className="h-full hover:shadow-lg transition-shadow group">
+              <Card className="h-full hover:shadow-lg overflow-hidden transition-shadow group">
                 <CardHeader className="p-0">
                   <div className="relative aspect-[16/9]">
                     <Image
