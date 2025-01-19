@@ -26,11 +26,13 @@ tags:
 - A popular NoSQL database
 - Datas are stored in the form of key-value pair.
 ### Inserting :
-- In mongoDB, objects are stored in a collection, To create a collection : `db.createCollection("cats")`
+- In mongoDB, objects are stored in a collection, To create a collection: `db.createCollection("cats")`
 	- This will create a collection named 'cats'
 - To insert datas(objects) into the mongoDB collection, 2 methods can be used
-		1. `db.insertOne({object})`
-		2. `db.insertMany({objects})`
+
+		1. `db.insertOne({document})`
+		2. `db.insertMany({documents})`
+
 	- Examples:
 ```
 db.insertOne({
@@ -58,4 +60,3 @@ age : 8
 ### Finding : 
 - In mongoDB, objects inside the collections can be accessed by using the `find()` method.
 - To find everything in the collection, `db.cats.find()` -> This results in every documents present in the collection named cats.
-``

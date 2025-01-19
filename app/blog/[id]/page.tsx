@@ -68,7 +68,7 @@ export default async function Post({ params }: { params: { id: string } }) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-secondary-foreground rounded-full text-sm"
+                  className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
                 >
                   {tag}
                 </span>
