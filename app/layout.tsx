@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'Maddys Cave',
     description: 'A blog built with Next.js and Tailwind CSS',
     type: 'website',
-    url: 'https://your-domain.com',
+    url: 'https://maddyscave.vercel.app/',
     images: [
       {
         url: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643',

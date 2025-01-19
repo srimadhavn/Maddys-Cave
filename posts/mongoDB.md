@@ -1,10 +1,13 @@
 ---
-title: "MongoDB"
-date: 2025-01-08
+title: MongoDB
+date: 2025-01-20
 category: Technology
 excerpt: Learn about NOSQL and mongoDB and connection with express.js
-coverImage: "https://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png"
-tags: ["Database", "SQL"," RDBMS"]
+coverImage: https://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png
+tags:
+  - Database
+  - SQL
+  - RDBMS
 ---
 
 # SQL vs NoSQL
@@ -22,10 +25,37 @@ tags: ["Database", "SQL"," RDBMS"]
 ## MongoDB
 - A popular NoSQL database
 - Datas are stored in the form of key-value pair.
+### Inserting :
+- In mongoDB, objects are stored in a collection, To create a collection : `db.createCollection("cats")`
+	- This will create a collection named 'cats'
+- To insert datas(objects) into the mongoDB collection, 2 methods can be used
+		1. `db.insertOne({object})`
+		2. `db.insertMany({objects})`
+	- Examples:
+```
+db.insertOne({
+	name : "siamese",
+	gender : "female",
+	age : 3
+	})
+```
 
 ```
-	{
-		title : string
-		required : true 
-	}
+db.insertMany([
+{
+name : "Persian",
+gender : "male",
+age : 2
+},
+{
+name : "Russian",
+gender : "male",
+age : 8
+}]
+	)
 ```
+
+### Finding : 
+- In mongoDB, objects inside the collections can be accessed by using the `find()` method.
+- To find everything in the collection, `db.cats.find()` -> This results in every documents present in the collection named cats.
+``
