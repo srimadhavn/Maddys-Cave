@@ -26,7 +26,7 @@ export default function AboutPage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">About Me</h2>
         <p className="text-muted-foreground leading-relaxed">
-          I'm a passionate web developer with an interest in cloud technologies. I enjoy building scalable web applications and exploring new tools and frameworks. My goal is to create efficient and user-friendly solutions that make a positive impact.
+          I'm a passionate full stack web developer with an interest in cloud technologies. I enjoy building scalable web applications and exploring new tools and frameworks. My goal is to create efficient and user-friendly solutions that make a positive impact.
         </p>
       </section>
 
@@ -36,7 +36,7 @@ export default function AboutPage() {
           <div className="space-y-2">
             <h3 className="font-medium">Languages</h3>
             <p className="text-sm text-muted-foreground">
-              C++, JavaScript, Python
+              C++, JavaScript, TypeScript, Python3
             </p>
           </div>
           <div className="space-y-2">
@@ -48,13 +48,13 @@ export default function AboutPage() {
           <div className="space-y-2">
             <h3 className="font-medium">Computer Science</h3>
             <p className="text-sm text-muted-foreground">
-              Data Structures, Algorithms, Database Management, Computer Networking
+              Data Structures, Algorithms, Database Management, Computer Networking, Operating Systems, Object Oriented Programming
             </p>
           </div>
           <div className="space-y-2">
             <h3 className="font-medium">Tools & Practices</h3>
             <p className="text-sm text-muted-foreground">
-              Git
+              Git, Docker, AWS, Linux
             </p>
           </div>
         </div>
