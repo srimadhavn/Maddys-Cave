@@ -8,7 +8,13 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">Maddy's Cave</span>
+          <img 
+            src="https://i.pinimg.com/736x/3b/5f/e6/3b5fe66e050039a49e401c078b944231.jpg" 
+            alt="Logo" 
+            className="h-8 w-8 mr-2 rounded-full" 
+          />
+          <span className="text-2xl font-bold tracking-tight hover:text-primary transition-colors">
+          </span>
           </Link>
           <nav className="flex items-center space-x-6">
             <Link href="/blog" className="text-sm font-medium hover:text-primary">
