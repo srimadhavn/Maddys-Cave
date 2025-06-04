@@ -33,7 +33,7 @@ export default function AboutPage() {
             </Link>
           </div>
           <p className="text-xl text-muted-foreground">
-            Passionate Web Developer 
+            Machine Learning Engineer 
           </p>
         </div>
       </section>
