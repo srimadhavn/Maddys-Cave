@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">About Me</h2>
         <p className="text-muted-foreground leading-relaxed">
-          I'm a passionate full stack web developer with an interest in cloud technologies. I enjoy building scalable web applications and exploring new tools and frameworks. My goal is to create efficient and user-friendly solutions that make a positive impact.
+          I'm a passionate Machine Learning Engineer with an interest in cloud technologies. I enjoy building scalable and efficient ML models and exploring new tools and libraries. My goal is to create efficient and impactful solutions that make a positive impact.
         </p>
       </section>
 
@@ -51,13 +51,13 @@ export default function AboutPage() {
           <div className="space-y-2">
             <h3 className="font-medium">Languages</h3>
             <p className="text-sm text-muted-foreground">
-              C++, JavaScript, TypeScript, Python3
+              C++, Python3
             </p>
           </div>
           <div className="space-y-2">
-            <h3 className="font-medium">Web Technologies</h3>
+            <h3 className="font-medium">ML libraries</h3>
             <p className="text-sm text-muted-foreground">
-              React, Next.js, Node.js, Express.js,Tailwind CSS
+              Scikit-learn, Tensorflow, Keras
             </p>
           </div>
           <div className="space-y-2">
