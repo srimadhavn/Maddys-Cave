@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   try {
     const post = await getPostData(params.id)
     return {
-      title: `${post.title} | Maddy's Cave`,
+      title: `${post.title} | Macvulin`,
       description: post.excerpt,
       openGraph: {
         title: post.title,
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     }
   } catch {
     return {
-      title: "Post not found | Maddy's Cave",
+      title: "Post not found | Macvulin",
     }
   }
 }

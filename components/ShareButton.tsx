@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Share2, Twitter, Facebook, Linkedin, Link2, Check } from "lucide-react"
+import { Share2, Check } from "lucide-react"
 import { toast } from "@/hooks/use-toast"
 
 interface ShareButtonProps {
@@ -14,11 +13,11 @@ interface ShareButtonProps {
 export default function ShareButton({ url, title }: ShareButtonProps) {
   const [copied, setCopied] = useState(false)
 
-  const shareLinks = {
-    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-  }
+  const hasNativeShare = typeof navigator !== "undefined" && "share" in navigator
+
+  const isMobile =
+    typeof window !== "undefined" &&
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 
   const copyToClipboard = async () => {
     try {
@@ -38,36 +37,50 @@ export default function ShareButton({ url, title }: ShareButtonProps) {
     }
   }
 
-  const openShareWindow = (shareUrl: string) => {
-    window.open(shareUrl, "_blank", "width=600,height=400")
+  const handleNativeShare = async () => {
+    if (hasNativeShare) {
+      try {
+        await navigator.share({
+          title: title,
+          text: `Check out this article: ${title}`,
+          url: url,
+        })
+      } catch (err) {
+        if ((err as Error).name !== "AbortError") {
+          copyToClipboard()
+        }
+      }
+    } else {
+      copyToClipboard()
+    }
+  }
+
+  const handleShare = () => {
+    if (isMobile && hasNativeShare) {
+      handleNativeShare()
+    } else {
+      copyToClipboard()
+    }
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="flex items-center gap-2">
+    <Button
+      variant="outline"
+      size="sm"
+      className="flex items-center gap-2 hover:bg-muted/50 transition-all duration-300"
+      onClick={handleShare}
+    >
+      {copied ? (
+        <>
+          <Check className="w-4 h-4 text-green-600" />
+          Copied!
+        </>
+      ) : (
+        <>
           <Share2 className="w-4 h-4" />
           Share
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-48">
-        <DropdownMenuItem onClick={() => openShareWindow(shareLinks.twitter)}>
-          <Twitter className="w-4 h-4 mr-2" />
-          Share on Twitter
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => openShareWindow(shareLinks.facebook)}>
-          <Facebook className="w-4 h-4 mr-2" />
-          Share on Facebook
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => openShareWindow(shareLinks.linkedin)}>
-          <Linkedin className="w-4 h-4 mr-2" />
-          Share on LinkedIn
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={copyToClipboard}>
-          {copied ? <Check className="w-4 h-4 mr-2 text-green-600" /> : <Link2 className="w-4 h-4 mr-2" />}
-          {copied ? "Copied!" : "Copy link"}
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+        </>
+      )}
+    </Button>
   )
 }

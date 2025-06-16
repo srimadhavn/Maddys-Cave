@@ -8,11 +8,13 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-          <img 
-            src="https://i.pinimg.com/736x/3b/5f/e6/3b5fe66e050039a49e401c078b944231.jpg" 
-            alt="Logo" 
-            className="h-8 w-8 mr-2 rounded-full" 
-          />
+                  <img
+          src="/logo/logo.svg"
+          alt="Logo"
+          className="h-9 w-9 mr-2 text-foreground transition-transform transform hover:scale-105"
+        />
+
+
           <span className="text-2xl font-bold tracking-tight hover:text-primary transition-colors">
           </span>
           </Link>

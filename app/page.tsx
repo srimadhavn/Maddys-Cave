@@ -14,34 +14,29 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero Section */}
-        <section className="py-20 lg:py-32 text-center space-y-8 animate-fade-in">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 animate-bounce-subtle">
-              <Sparkles className="w-4 h-4" />
-              Welcome to my digital space
-            </div>
+      {/* Hero Section */}
+      <section className="py-8 lg:py-28 text-center space-y-8 animate-fade-in">
+        <div className="space-y-6">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 animate-bounce-subtle mt-0">
+          <Sparkles className="w-4 h-4" />
+         A battlefield of ideas, carved in code and conviction.      
+ </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
-                Maddy's Cave
+                Macvulin
               </span>
             </h1>
 
             <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              I love sharing what I learn by writing! Dive into tutorials, insights, and thoughts on technology.
+              As battles demand steel, creation demands clarity <br />
+               — deliberate, relentless.
             </p>
 
-            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 max-w-2xl mx-auto">
-              <p className="text-amber-800 dark:text-amber-200 text-sm flex items-center gap-2">
-                <span className="text-lg">⚠️</span>
-                The data of blog posts are yet to be uploaded... Do checkout Data structures and Node.js
-              </p>
-            </div>
           </div>
 
           <div
-            className="flex flex-col sm:flex-row justify-center gap-4 pt-8 animate-fade-in-up"
+            className="flex flex-col sm:flex-row justify-center gap-4 pt-6 animate-fade-in-up"
             style={{ animationDelay: "200ms" }}
           >
             <Button asChild size="lg" className="group shadow-lg hover:shadow-xl transition-all duration-300">
@@ -59,7 +54,7 @@ export default async function Home() {
 
         {/* Featured Post Section */}
         {featuredPost && (
-          <section className="py-16 lg:py-24 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+          <section className="py-6 lg:py-24 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Post</h2>
               <p className="text-muted-foreground text-lg">Don't miss this highlighted content</p>
