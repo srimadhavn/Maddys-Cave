@@ -239,7 +239,7 @@ export default async function Post({ params }: { params: { id: string } }) {
                             className="px-3 py-1 bg-muted/50 hover:bg-muted hover:scale-105 transition-all duration-300 cursor-pointer animate-bounce-in"
                             style={{ animationDelay: `${600 + index * 100}ms` }}
                           >
-                            #{tag}
+                            {tag}
                           </Badge>
                         ))}
                       </div>
